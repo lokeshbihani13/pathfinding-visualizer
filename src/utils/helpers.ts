@@ -34,10 +34,10 @@ export const checkIfStartOrEnd = (row: number, col: number) => {
 };
 
 export const createNewGrid = (grid: GridType, row: number, col: number) => {
-  const newGrid = grid.slice();
+  const newGrid = grid.slice();//create a shallow copy of the grid
   const newTile = {
-    ...newGrid[row][col],
-    isWall: !newGrid[row][col].isWall,
+    ...newGrid[row][col],//spread the current tile
+    isWall: !newGrid[row][col].isWall,//update the isWall property
   };
 
   newGrid[row][col] = newTile;
